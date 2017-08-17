@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multi-User Blog</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/landing-page.css">
+    <link href="static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <div id = "header" class="col-md-12">
+          <a class="navbar-brand topnav" 
+                  onclick="location.href='/';"><h1>Multi-User Blog</h1></a>
+          <div class="btn-group pull-right" role="group" aria-label="...">
+            {% if uid: %}
+              <a href="/addpost" class="btn btn-default">New Post</a>
+              <a href="/signout" class="btn btn-default">Sign Out</a>
+            {% else: %}
+              <a href="/signup" class="btn btn-default">Sign Up</a>
+              <a href="/signin" class="btn btn-default">Sign In</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+        <hr>
+      <div class="row">
+        <div class="col-md-12">
+          {% block content %}
+          {% endblock %}
+        </div>
+      </div>
+
+    </div>
+  </body>
+
+</html>

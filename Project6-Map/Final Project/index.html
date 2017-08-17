@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!--ENCODING DEFINED-->
+
+    <meta charset="utf-8">
+
+    <!--TO SET THE INITIAL SCALE-->
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!--MATERIAL CSS BY CDNJS-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+    <!--BOOTSTRAP ADDED HERE-->
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!--CSS FILE FOR PROJECT-->
+
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!--TEMPLATE CSS FILE FROM BOOTSTRAP-->
+
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+
+    <!--FONTS BY GOOGLE-->
+
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <!--jQuery ADDED HERE-->
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <!--KNOCKOUT JAVASCRIPT ADDED HERE-->
+
+    <script src="js/knockout.js"></script>
+
+    <!--PROJECT JAVASERIPT ADDED HERE-->
+
+    <script src="js/mainjs.js" charset="utf-8"></script>
+
+    <!--CORE BOOTSTRAP JS-->
+
+    <script src="js/bootstrap.js" charset="utf-8"></script>
+    <title>Final Project</title>
+  </head>
+  <body>
+    <div id="wrapper">
+
+      <!--SIDEBAR-->
+
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li>
+            <div class="userView">
+              <div class="background">
+                <img src="https://img.discogs.com/9V_KJnY2yu9bjss6JwwrAlIpMPM=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-1289-1432228655-5272.jpeg.jpg">
+              </div>
+              <a><span class="white-text name">SOHIL KAUSHAL</span></a>
+              <a><span class="white-text email">sohilkaushal@gmail.com</span></a>
+          </div>
+          </li>
+          <li>
+
+            <!--SEARCHBAR-->
+
+            <div class="searchBar">
+              <input id="input" placeholder="Search " data-bind="value: searchText, valueUpdate: 'afterkeydown' ,event: {keyup: search}" /><br>
+              <ul data-bind="foreach: markers">
+
+                <!-- ko if: show -->
+
+                <li id="links" data-bind="text: name,click: $parent.setSelected"></li>
+
+                <!-- /ko -->
+
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container-fluid">
+
+      <!--STATIC NAVBAR-->
+
+      <div class="navbar-fixed">
+            <nav id="navbars">
+              <div class="nav-wrapper">
+                <a href="#!" class="brand-logo center pacifico">PLACES I HAVE RECENTLY VISITED</a>
+            </div>
+         </nav>
+       </div>
+      <div id="map"></div>
+
+      <!--GOOGLE MAPS API-->
+
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCz_PJJB_H1EsZ07FvFeaEBkjCHCMRXDlE&v=3&callback=initMap" onerror="Error()" async defer></script>
+
+      <!--ERROR MESSAGE-->
+
+      <div id="error">
+        <h3 data-bind="text: errormsg"></h3>
+      </div>
+
+      <!--BUTTON TO TOGGLE MENU-->
+
+        <a href="#menu-toggle" class="btn btn-default pull-right" id="menu-toggle"> Menu</a>
+
+      <!--SCRIPT FOR NAVBAR FUNCTIONALITY-->
+
+      <script>
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+      });
+      </script>
+    </div>
+  </body>
+</html>

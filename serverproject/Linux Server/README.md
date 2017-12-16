@@ -12,7 +12,8 @@ I have added a user name grader and given him all the neccessary and needed to j
 lastly, i have uploaded my previous project name catalog so that my server shows it online without any
 error. For this we will do the steps included in <b>How to execute the project</b>.
 
-live website on:  http://13.126.5.228
+live website on:  ~~http://13.126.5.228~~
+##### Note that this link has been closed since my nanodegree is complete
 <br>
 
 <b><big>****  Requirements  ****</big></b><br>
